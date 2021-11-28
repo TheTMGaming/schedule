@@ -1,0 +1,96 @@
+html
+{
+    margin: 0;
+    padding: 0;
+}
+
+.task
+{
+    display: flex;
+    background: white;
+    align-items: center;
+    border: 1px solid #E5E8ED;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 20px 16px;
+    width: 1230px;
+}
+
+.date
+{
+    display: flex;
+    margin-right: 40px;
+}
+
+.month-time
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.day
+{
+    margin: 0 20px;
+}
+
+.day-text,
+.month-text,
+.title-text,
+.time-text,
+.description-text,
+.button-view
+{
+    font-family: 'Lato', sans-serif;
+}
+
+.day-text
+{
+    font-size: 48px;
+    color: #FF3F3A;
+}
+
+.month-text
+{
+    font-size: 20px;
+    margin: 4px 0;
+    color: #1E212C;
+}
+
+.time-text
+{
+    font-size: 16px;
+    margin: 4px 0;
+    color: #787A80;
+}
+
+.title-text
+{
+    display: block;
+    font-size: 20px;
+    margin: 4px 0;
+    color: #1E212C;
+}
+
+.description-text
+{
+    font-size: 16px;
+    color: #787A80;
+}
+
+.button-view
+{
+    margin-left: 40px;
+    width: 123px;
+    height: 36px;
+    border: 2px solid #FF3F3A;
+    border-radius: 4px;
+    background-color: white;
+    color: #FF3F3A;
+}
+
+.button-view:hover
+{
+    transition: 0.8s;
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    color: white;
+}
