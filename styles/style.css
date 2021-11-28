@@ -4,26 +4,33 @@ html
     padding: 0;
 }
 
+*
+{
+    box-sizing: border-box;
+}
+
 /* Task */
 .task
 {
+    transition: 0.5s;
     display: flex;
     background: white;
     align-items: center;
     border: 1px solid #E5E8ED;
-    box-sizing: border-box;
     border-radius: 4px;
     padding: 20px 16px;
+    margin-bottom: 30px;
+}
+
+.task:hover
+{
+    transition: 0.5s;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
 }
 
 .info
 {
     margin-right: 20px;
-}
-
-.task-last
-{
-    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
 }
 
 .date
@@ -111,7 +118,6 @@ html
 .header
 {
     display: flex;
-    box-sizing: border-box;
     background: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -153,10 +159,90 @@ html
 .header-button:hover
 {
     transition: 0.5s;
-    color: #5E81FE;
+    color: #FF3F3A
 }
 
 .header-account .header-button
 {
     margin-right: 40px;
+}
+
+
+/* Events form */
+.events-title
+{
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    font-size: 46px;
+    color: #1E212C;
+}
+
+.events-sorter
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.events-sorter .point
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.events-sorter label
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #424551;
+}
+
+.events-sorter .small-label
+{
+    margin-left: 12px;
+    margin-right: 40px;
+    font-size: 14px;
+    color: #787A80;
+}
+
+.events-sorter .parameter
+{
+    margin-left: 12px;
+    background: white;
+    border: 1px solid #D7DADD;
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+}
+
+.events-sorter .category,
+.events-sorter .sorted
+{
+    width: 160px;
+    margin-right: 40px;
+}
+
+.events-sorter .count
+{
+    width: 72px;
+}
+
+
+.events-sorter button
+{
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
 }
