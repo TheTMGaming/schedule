@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php require_once "src/header.php"; ?>
     <?php require_once "src/task.php"; ?>
 </body>
 </html>
