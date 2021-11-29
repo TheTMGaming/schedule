@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <?php require_once "src/head.php"; ?>
@@ -5,12 +9,13 @@
 <?php require_once "src/header.php"; ?>
 <div class="wrapper">
     <span class="title">Authorization</span>
-    <form class="register-form" action="" method="post">
+    <form class="register-form" action="connection/SignIn.php" method="post">
+        <?php require_once "src/error.php"; ?>
         <label>Login/email</label>
-        <input type="text" name="login" placeholder="Input login or email" required>
+        <input type="text" name="identifier" placeholder="Input login or email" required>
         <label>Password</label>
         <input type="password" name="password" placeholder="Input password" required>
-        <button class="button" type="submit">Sign in</button>
+        <button class="button button-submit" type="submit">Sign in</button>
         <span>
                 Haven't you got an account? - <a href="registration.php">Register</a>!
         </span>

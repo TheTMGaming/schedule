@@ -4,19 +4,23 @@ require_once 'IQuery.php';
 
 class UserInserting implements IQuery
 {
-    private User $user;
+    private string $login;
+    private string $email;
+    private string $password;
 
-    public function __construct(User $user)
+    public function __construct(string $login, string $email, string $password)
     {
-        $this->user = $user;
+        $this->login = $login;
+        $this->email = $email;
+        $this->password = md5($password);
     }
 
     public function GetParameters(): array
     {
         return [
-            'login' => $this->user->GetLogin(),
-            'email' => $this->user->GetEmail(),
-            'password' => $this->user->GetPassword()
+            'login' => $this->login,
+            'email' => $this->email,
+            'password' => $this->password
         ];
     }
 

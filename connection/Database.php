@@ -38,9 +38,4 @@ class Database implements IDatabase
 
         return $this->last_statement->fetchAll();
     }
-
-    public function IsUpdatedLastQuery(): bool
-    {
-        return $this->last_statement?->rowCount() > 0;
-    }
 }

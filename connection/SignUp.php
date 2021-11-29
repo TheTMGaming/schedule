@@ -5,7 +5,6 @@ require_once 'queries/UserByLoginSelecting.php';
 require_once 'queries/UserByEmailSelecting.php';
 require_once 'queries/UserInserting.php';
 require_once 'Database.php';
-require_once 'User.php';
 
 function IsExistUserByQuery(Database $connection, IQuery $query) : bool
 {
@@ -38,8 +37,7 @@ if (IsExistUserByQuery($database, new UserByLoginSelecting($login)))
 if (IsExistUserByQuery($database, new UserByEmailSelecting($email)))
     ErrorHandle("Email \"$email\" is already reserved!");
 
-$user = new User($login, $email, $password);
-$database->Execute(new UserInserting($user));
+$database->Execute(new UserInserting($login, $email, $password));
 
 $database->Disconnect();
 
