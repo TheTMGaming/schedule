@@ -7,6 +7,15 @@ html
 *
 {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Task */
@@ -30,6 +39,7 @@ html
 
 .info
 {
+    width: 100%;
     margin-right: 20px;
 }
 
@@ -51,16 +61,6 @@ html
     margin: 0 20px;
 }
 
-.day-text,
-.month-text,
-.title-text,
-.time-text,
-.description-text,
-.button-view
-{
-    font-family: 'Lato', sans-serif;
-}
-
 .day-text
 {
     font-size: 48px;
@@ -74,7 +74,7 @@ html
     color: #1E212C;
 }
 
-.time-text
+.date-text
 {
     font-size: 16px;
     margin: 4px 0;
@@ -95,19 +95,24 @@ html
     color: #787A80;
 }
 
-.button-view
+/* Buttons */
+.button
 {
-    margin-left: auto;
-    margin-right: 40px;
-    width: 123px;
-    height: 36px;
     border: 2px solid #FF3F3A;
     border-radius: 4px;
     background-color: white;
     color: #FF3F3A;
 }
 
-.button-view:hover
+.button-view
+{
+    margin-left: auto;
+    margin-right: 40px;
+    width: 123px;
+    height: 36px;
+}
+
+.button:hover
 {
     transition: 0.8s;
     background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
@@ -144,7 +149,6 @@ html
 
 .header-button
 {
-    font-family: 'Lato', sans-serif;
     font-size: 15px;
     text-decoration: none;
     margin-right: 40px;
@@ -167,12 +171,9 @@ html
     margin-right: 40px;
 }
 
-
-/* Events form */
-.events-title
+.title
 {
     display: flex;
-    font-family: 'Lato', sans-serif;
     justify-content: center;
     align-items: center;
     margin-top: 80px;
@@ -181,41 +182,19 @@ html
     color: #1E212C;
 }
 
-.events-sorter
+/* Register form */
+.register-form
 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
+    flex-direction: column;
 }
 
-.events-sorter .point
+.register-form input
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.events-sorter label
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #424551;
-}
-
-.events-sorter .small-label
-{
-    margin-left: 12px;
-    margin-right: 40px;
-    font-size: 14px;
-    color: #787A80;
-}
-
-.events-sorter .parameter
-{
-    margin-left: 12px;
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 25px;
     background: white;
     border: 1px solid #D7DADD;
     border-radius: 4px;
@@ -225,24 +204,21 @@ html
     outline: none;
 }
 
-.events-sorter .category,
-.events-sorter .sorted
+.register-form button
 {
-    width: 160px;
-    margin-right: 40px;
+    width: 500px;
+    height: 50px;
+    font-size: 16px;
 }
 
-.events-sorter .count
+.register-form span
 {
-    width: 72px;
+    display: block;
+    margin: 25px auto 25px auto;
 }
 
-
-.events-sorter button
+.register-form a
 {
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
+    color: #7c9ab7;
+    text-decoration: none;
 }
