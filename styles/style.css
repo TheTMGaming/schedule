@@ -98,6 +98,7 @@ html
 /* Buttons */
 .button
 {
+    cursor: pointer;
     border: 2px solid #FF3F3A;
     border-radius: 4px;
     background-color: white;
@@ -112,9 +113,16 @@ html
     height: 36px;
 }
 
-.button:hover
+.button-view:hover
 {
     transition: 0.8s;
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    color: white;
+}
+
+.button-submit
+{
+    border: 0;
     background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
     color: white;
 }
@@ -221,4 +229,28 @@ html
 {
     color: #7c9ab7;
     text-decoration: none;
+}
+
+/* Error */
+.error
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FF4242;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.error img
+{
+    margin-right: 10px;
+}
+
+.error span
+{
+    color: #FF4242;
 }

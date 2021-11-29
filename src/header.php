@@ -9,6 +9,6 @@
     </nav>
     <div class="header-account">
         <img src="../img/account.png">
-        <a class="header-button" href="../register.php">Sign in / Register</a>
+        <a class="header-button" href="../registration.php">Sign in / Register</a>
     </div>
 </header>

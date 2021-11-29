@@ -12,7 +12,7 @@
         <input type="password" name="password" placeholder="Input password" required>
         <button class="button" type="submit">Sign in</button>
         <span>
-                Haven't you got an account? - <a href="register.php">Register</a>!
+                Haven't you got an account? - <a href="registration.php">Register</a>!
         </span>
     </form>
 </div>

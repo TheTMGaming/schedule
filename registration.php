@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <?php require_once "src/head.php"; ?>
@@ -5,7 +9,8 @@
     <?php require_once "src/header.php"; ?>
     <div class="wrapper">
         <span class="title">Registration</span>
-        <form class="register-form" action="" method="post">
+        <form class="register-form" action="connection/signup.php" method="post">
+            <?php require_once "src/error.php"; ?>
             <label>Login</label>
             <input type="text" name="login" placeholder="Input login" required>
             <label>Email</label>
@@ -14,7 +19,7 @@
             <input type="password" name="password" placeholder="Input password" required>
             <label>Password confirmation</label>
             <input type="password" name="password_confirm" placeholder="Confirm password" required>
-            <button class="button" type="submit">Register</button>
+            <button class="button button-submit" type="submit">Sign up</button>
             <span>
                 Have you got an account? - <a href="login.php">Log in</a>!
             </span>
