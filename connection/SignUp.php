@@ -4,9 +4,9 @@ session_start();
 require_once 'queries/UserByLoginSelecting.php';
 require_once 'queries/UserByEmailSelecting.php';
 require_once 'queries/UserInserting.php';
-require_once 'Database.php';
+require_once 'Connection.php';
 
-function IsExistUserByQuery(Database $connection, IQuery $query) : bool
+function IsExistUserByQuery(Connection $connection, IQuery $query) : bool
 {
     $info = $connection->Execute($query);
 
@@ -28,17 +28,14 @@ $password_confirm = $_POST['password_confirm'];
 if ($password !== $password_confirm)
     ErrorHandle("Password was not confirmed");
 
-$database = new Database();
-$database->Connect();
+$connection = new Connection();
 
-if (IsExistUserByQuery($database, new UserByLoginSelecting($login)))
+if (IsExistUserByQuery($connection, new UserByLoginSelecting($login)))
     ErrorHandle("Login \"$login\" already exists!");
 
-if (IsExistUserByQuery($database, new UserByEmailSelecting($email)))
+if (IsExistUserByQuery($connection, new UserByEmailSelecting($email)))
     ErrorHandle("Email \"$email\" is already reserved!");
 
-$database->Execute(new UserInserting($login, $email, $password));
-
-$database->Disconnect();
+$connection->Execute(new UserInserting($login, $email, $password));
 
 header("Location: ../login.php");
