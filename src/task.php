@@ -1,5 +1,5 @@
 
-<div class="task">
+<div class="event">
     <div class="date">
         <div class="day">
             <span class="day-text">05</span>

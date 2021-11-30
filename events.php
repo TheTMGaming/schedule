@@ -1,3 +1,11 @@
+<?php
+    require_once 'connection/Connection.php';
+    require_once 'connection/queries/EventsSelecting.php';
+
+    $connection = new Connection();
+    $events = $connection->Execute(new EventsSelecting());
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -8,41 +16,26 @@
 
 <body>
     <span class="title">Events</span>
-
-    <div class="events-list">
-        <div class="task">
-            <div class="date">
-                <div class="day">
-                    <span class="day-text">05</span>
+    <div class="wrapper">
+        <div class="events-list">
+            <?php foreach ($events as $event):?>
+                <?php $date = getdate(strtotime($event['date'])); ?>
+                <div class="event">
+                    <div class="date">
+                        <div class="day">
+                            <span class="day-text"><?=str_pad($date['mday'], 2, 0, STR_PAD_LEFT)?></span>
+                        </div>
+                        <div class="month-time">
+                            <span class="month-text"><?=$date['month']?></span>
+                            <span class="date-text"><?=$date['year']?></span>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <span class="title-text"><?=$event['title']?></span>
+                    </div>
+                    <button class="button button-view">View more</button>
                 </div>
-                <div class="month-time">
-                    <span class="month-text">August</span>
-                    <span class="date-text">2050</span>
-                </div>
-            </div>
-
-            <div class="info">
-                <span class="title-text">Formation of the organizational structure of the company in the face of uncertainty.</span>
-            </div>
-
-            <button class="button button-view">View more</button>
-        </div>
-        <div class="task">
-            <div class="date">
-                <div class="day">
-                    <span class="day-text">05</span>
-                </div>
-                <div class="month-time">
-                    <span class="month-text">August</span>
-                    <span class="date-text">2050</span>
-                </div>
-            </div>
-
-            <div class="info">
-                <span class="title-text">Formation</span>
-            </div>
-
-            <button class="button button-view">View more</button>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

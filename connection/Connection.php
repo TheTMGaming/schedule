@@ -25,6 +25,6 @@ class Connection
         $statement = $this->connection->prepare($query->GetQuery());
         $statement->execute($query->GetParameters());
 
-        return $statement->fetchAll();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }
