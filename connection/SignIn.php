@@ -17,4 +17,5 @@
         die();
     }
 
-    //$_SESSION['user_id'] = $info['id'];
+    $_SESSION['user'] = $info[0];
+    header("Location: ../personal.php");
