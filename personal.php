@@ -25,7 +25,13 @@ require_once "src/header.php";
 <body>
 <span class="title">Your Events</span>
 <div class="wrapper">
+
     <div class="events-list">
+        <div class="button-add-wrapper">
+            <a href="new_event.php">
+                <button class="button button-add">New</button>
+            </a>
+        </div>
         <?php foreach ($events as $event):?>
             <?php $date = getdate(strtotime($event['date'])); ?>
             <div class="event">

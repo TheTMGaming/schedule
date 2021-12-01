@@ -115,21 +115,22 @@ html
 .button
 {
     cursor: pointer;
-    border: 2px solid #FF3F3A;
-    border-radius: 4px;
-    background-color: white;
-    color: #FF3F3A;
-}
-
-.button-view
-{
-    margin-left: auto;
     width: 123px;
     height: 36px;
 }
 
+.button-view
+{
+    border: 2px solid #FF3F3A;
+    border-radius: 4px;
+    margin-left: auto;
+    color: #FF3F3A;
+    background-color: white;
+}
+
 .button-view:hover
 {
+    border: 0;
     transition: 0.8s;
     background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
     color: white;
@@ -139,6 +140,27 @@ html
 {
     border: 0;
     background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    color: white;
+}
+
+.button-add-wrapper
+{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 60px;
+}
+
+.button-add-wrapper a
+{
+    display: block;
+    margin-left: auto;
+}
+
+.button-add
+{
+    border: 0;
+    border-radius: 4px;
+    background: linear-gradient(55.95deg, #238636 0%, #17be3d 100%);
     color: white;
 }
 
@@ -211,14 +233,15 @@ html
     color: #1E212C;
 }
 
-/* Register form */
-.register-form
+/* Form */
+.form
 {
     display: flex;
     flex-direction: column;
 }
 
-.register-form input
+.form input,
+.form select
 {
     width: 500px;
     height: 50px;
@@ -233,20 +256,20 @@ html
     outline: none;
 }
 
-.register-form button
+.form button
 {
     width: 500px;
     height: 50px;
     font-size: 16px;
 }
 
-.register-form span
+.form span
 {
     display: block;
     margin: 25px auto 25px auto;
 }
 
-.register-form a
+.form a
 {
     color: #7c9ab7;
     text-decoration: none;

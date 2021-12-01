@@ -15,7 +15,7 @@
     <?php require_once "src/header.php"; ?>
     <div class="wrapper">
         <span class="title">Registration</span>
-        <form class="register-form" action="connection/SignUp.php" method="post">
+        <form class="form" action="connection/SignUp.php" method="post">
             <?php require_once "src/error.php"; ?>
             <label>Login</label>
             <input type="text" name="login" placeholder="Input login" required>

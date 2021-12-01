@@ -15,7 +15,7 @@
 <?php require_once "src/header.php"; ?>
 <div class="wrapper">
     <span class="title">Authorization</span>
-    <form class="register-form" action="connection/SignIn.php" method="post">
+    <form class="form" action="connection/SignIn.php" method="post">
         <?php require_once "src/error.php"; ?>
         <label>Login/email</label>
         <input type="text" name="identifier" placeholder="Input login or email" required>
