@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if (isset($_SESSION['user']))
+    {
+        header("Location: personal.php");
+        die();
+    }
 ?>
 
 <!doctype html>

@@ -43,7 +43,13 @@ require_once "src/header.php";
                 <div class="info">
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
-                <button class="button button-view">Edit</button>
+                <div class="buttons">
+                    <button class="button button-view">Edit</button>
+                    <form action="connection/remove.php" method="post">
+                        <input type="hidden" value="<?= $event['id']?>" name="id">
+                        <button class="button button-view">Remove</button>
+                    </form>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
