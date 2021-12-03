@@ -15,7 +15,6 @@
         <?php endif; ?>
     </div>
     <nav class="header-menu">
-        <a class="header-button" href="../">About</a>
         <a class="header-button" href="../events.php">Events</a>
         <?php if (isset($_SESSION['user'])): ?>
             <a class="header-button" href="../personal.php">Your Events</a>
