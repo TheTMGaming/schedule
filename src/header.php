@@ -24,7 +24,7 @@
     <div class="header-account">
         <?php if (isset($_SESSION['user'])): ?>
             <img src="../img/user.png">
-            <span><?=$_SESSION['user']['login']?></span>
+            <a class="header-button profile-button" href="../profile.php"><?=$_SESSION['user']['login']?></a>
             <img src="../img/logout.png">
             <a class="header-button" href="../connection/LogOut.php">Log out</a>
         <?php else: ?>

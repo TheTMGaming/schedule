@@ -53,7 +53,7 @@ require_once "src/header.php";
                     <button class="button button-view">Edit</button>
                     <form action="connection/remove.php" method="post">
                         <input type="hidden" value="<?= $event['id']?>" name="id">
-                        <button class="button button-view">Remove</button>
+                        <button onclick="return confirm('Are you sure?')" class="button button-view">Remove</button>
                     </form>
                 </div>
             </div>

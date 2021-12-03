@@ -206,11 +206,6 @@ html
     color: #424551;
 }
 
-.header-button:last-of-type
-{
-    margin-right: 0;
-}
-
 .header-button:hover
 {
     transition: 0.5s;
@@ -220,6 +215,11 @@ html
 .header-account .header-button
 {
     margin-right: 40px;
+}
+
+.header-button.profile-button
+{
+    margin-right: 10px;
 }
 
 .title
@@ -297,4 +297,46 @@ html
 .error span
 {
     color: #FF4242;
+}
+
+/* Profile */
+.profile
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #424551;
+    border-radius: 4px;
+    padding: 20px;
+    width: 600px;
+}
+
+.profile
+{
+    color: #424551;
+}
+
+.profile-info
+{
+    margin-bottom: 40px;
+}
+
+.data
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.data:last-of-type
+{
+    margin-bottom: 0;
+}
+
+.data label
+{
+    margin-right: 10px;
 }

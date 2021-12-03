@@ -24,6 +24,6 @@ class UserSelecting implements IQuery
 
     public function GetQuery(): string
     {
-        return "SELECT id, login FROM users WHERE (login = :identifier OR email = :identifier) AND password = :password";
+        return "SELECT id, login, email FROM users WHERE (login = :identifier OR email = :identifier) AND password = :password";
     }
 }
