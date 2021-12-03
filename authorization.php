@@ -20,12 +20,18 @@
             <label>Login/email</label>
             <input type="text" name="identifier" placeholder="Input login or email" required>
             <label>Password</label>
-            <input type="password" name="password" placeholder="Input password" required>
+            <div>
+                <input class="password" type="password" name="password" placeholder="Input password" required>
+                <button class="toggle-password" type="button">
+                    <img class="eye" src="images/closed_eye.png">
+                </button>
+            </div>
             <button class="button button-submit" type="submit">Sign in</button>
             <span>
                     Haven't you got an account? - <a href="registration.php">Register</a>!
             </span>
         </form>
     </div>
+    <script src="sources/password_visibility.js"></script>
 </body>
 </html>

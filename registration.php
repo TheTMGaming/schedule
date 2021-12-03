@@ -22,14 +22,25 @@
             <label>Email</label>
             <input type="email" name="email" placeholder="Input email" required>
             <label>Password</label>
-            <input type="password" name="password" placeholder="Input password" required>
+            <div>
+                <input class="password" type="password" name="password" placeholder="Input password" required>
+                <button class="toggle-password" type="button">
+                    <img class="eye" src="images/closed_eye.png">
+                </button>
+            </div>
             <label>Password confirmation</label>
-            <input type="password" name="password_confirm" placeholder="Confirm password" required>
+            <div>
+                <input class="password" type="password" name="password_confirm" placeholder="Confirm password" required>
+                <button class="toggle-password" type="button">
+                    <img class="eye" src="images/closed_eye.png">
+                </button>
+            </div>
             <button class="button button-submit" type="submit">Sign up</button>
             <span>
                 Have you got an account? - <a href="authorization.php">Log in</a>!
             </span>
         </form>
     </div>
+    <script src="sources/password_visibility.js"></script>
 </body>
 </html>
