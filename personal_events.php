@@ -50,7 +50,7 @@ require_once "sources/header.php";
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
                 <div class="buttons">
-                    <form action="edit.php" method="get">
+                    <form action="edit.php" method="post">
                         <input type="hidden" value="<?=$event['id']?>" name="id">
                         <button class="button button-view">Edit</button>
                     </form>

@@ -29,7 +29,7 @@
                 </div>
             </div>
             <form action="vendor/user/remove_account.php" method="post">
-                <button onclick="return confirm('Are you sure?')" class="button button-view">Remove profile</button>
+                <button onclick="return confirm('Are you sure? All your events will be deleted!')" class="button button-view">Remove profile</button>
             </form>
         </div>
     </div>

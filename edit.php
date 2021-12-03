@@ -12,7 +12,7 @@
 
     $connection = new Connection();
 
-    $event = $connection->Execute(new EventSelecting($_GET['id']))[0];
+    $event = $connection->Execute(new EventSelecting($_POST['id']))[0];
     $date = getdate(strtotime($event['date']));
 ?>
 
