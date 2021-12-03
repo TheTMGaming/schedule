@@ -50,7 +50,10 @@ require_once "src/header.php";
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
                 <div class="buttons">
-                    <button class="button button-view">Edit</button>
+                    <form action="edit.php" method="get">
+                        <input type="hidden" value="<?=$event['id']?>" name="id">
+                        <button class="button button-view">Edit</button>
+                    </form>
                     <form action="connection/remove.php" method="post">
                         <input type="hidden" value="<?= $event['id']?>" name="id">
                         <button onclick="return confirm('Are you sure?')" class="button button-view">Remove</button>

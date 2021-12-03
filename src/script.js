@@ -56,6 +56,36 @@ function populateYears()
     yearSelect.value = current_year;
 }
 
+function setDate(num_day, num_month, num_year)
+{
+    let months = {
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
+        8: 'August',
+        9: 'September',
+        10: 'October',
+        11: 'November',
+        12: 'December'
+    }
+
+    daySelect.value = num_day;
+    monthSelect.value = months[num_month];
+    yearSelect.value = num_year;
+}
+
+function setDateNow()
+{
+    let date = new Date();
+
+    populateDays(date.getMonth() + 1, daySelect.value);
+    setDate(date.getDate(), date.getMonth() + 1, date.getFullYear())
+}
+
 
 yearSelect.onchange = function() {
     populateDays(monthSelect.value, daySelect.value);
