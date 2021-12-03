@@ -4,22 +4,20 @@
 
     class UserDeleting implements IQuery
     {
-        private string $id;
+        private int $id;
 
-        public function __construct(string $id)
+        public function __construct(int $id)
         {
             $this->id = $id;
         }
 
         public function GetParameters(): array
         {
-            return [
-                'id' => $this->id
-            ];
+            return array('id' => $this->id);
         }
 
         public function GetQuery(): string
         {
-            return "DELETE FROM users WHERE id=:id";
+            return "DELETE FROM users WHERE id = :id";
         }
     }

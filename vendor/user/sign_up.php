@@ -2,23 +2,7 @@
     session_start();
 
     require_once '../connection/Connection.php';
-    require_once '../connection/queries/UserByLoginSelecting.php';
-    require_once '../connection/queries/UserByEmailSelecting.php';
     require_once '../connection/queries/UserInserting.php';
-
-    function IsExistUserByQuery(Connection $connection, IQuery $query) : bool
-    {
-        $info = $connection->Execute($query);
-
-        return count($info) > 0;
-    }
-
-    function ErrorHandle(string $message)
-    {
-        $_SESSION['error_message'] = $message;
-        header("Location: ../../registration.php");
-        die();
-    }
 
     $login = $_POST['login'];
     $email = $_POST['email'];
@@ -26,16 +10,25 @@
     $password_confirm = $_POST['password_confirm'];
 
     if ($password !== $password_confirm)
-        ErrorHandle("Password was not confirmed");
+    {
+        $_SESSION['error_message'] = 'Password was not confirmed';
+
+        header("Location: ../../registration.php");
+        die();
+    }
 
     $connection = new Connection();
 
-    if (IsExistUserByQuery($connection, new UserByLoginSelecting($login)))
-        ErrorHandle("Login \"$login\" already exists!");
+    try
+    {
+        $connection->Execute(new UserInserting($login, $email, $password));
 
-    if (IsExistUserByQuery($connection, new UserByEmailSelecting($email)))
-        ErrorHandle("Email \"$email\" is already reserved!");
+        header("Location: ../../authorization.php");
+    }
+    catch (PDOException $e)
+    {
+        $_SESSION['error_message'] = 'This user is already registered';
 
-    $connection->Execute(new UserInserting($login, $email, $password));
+        header("Location: ../../registration.php");
+    }
 
-    header("Location: ../../authorization.php");

@@ -19,7 +19,7 @@
         $connection->Execute(new EventUpdating(
             $id, $_POST['title'], $_POST['day'], $_POST['month'], $_POST['year']));
 
-        header("Location: ../personal_events.php");
+        header("Location: ../../personal_events.php");
     }
     catch (Exception $e)
     {

@@ -2,7 +2,7 @@
     session_start();
 
     require_once 'vendor/connection/Connection.php';
-    require_once 'vendor/connection/queries/UserEventsSelecting.php';
+    require_once 'vendor/connection/queries/EventsSelecting.php';
 
     if (!isset($_SESSION['user']))
     {
@@ -11,7 +11,7 @@
     }
 
     $connection = new Connection();
-    $events = $connection->Execute(new UserEventsSelecting($_SESSION['user']['id']));
+    $events = $connection->Execute(new EventsSelecting($_SESSION['user']['id']));
 ?>
 
 <!doctype html>

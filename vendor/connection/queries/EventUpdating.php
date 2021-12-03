@@ -1,14 +1,15 @@
 <?php
+
     require_once 'IQuery.php';
 
     class EventUpdating implements IQuery
     {
-        private string $id;
+        private int $id;
         private string $title;
         private string $date;
 
-        public function __construct(string $id, string $title,
-                                    string $day, string $month, string $year)
+        public function __construct(int $id, string $title,
+                                    int $day, string $month, int $year)
         {
             $this->id = $id;
             $this->title = $title;
@@ -26,6 +27,6 @@
 
         public function GetQuery(): string
         {
-            return "UPDATE events SET title=:title, date=:date WHERE id=:id";
+            return "UPDATE events SET title = :title, date = :date WHERE id = :id";
         }
     }

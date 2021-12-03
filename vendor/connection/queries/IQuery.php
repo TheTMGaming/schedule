@@ -1,7 +1,7 @@
 <?php
 
-interface IQuery
-{
-    public function GetParameters() : array;
-    public function GetQuery() : string;
-}
+    interface IQuery
+    {
+        public function GetParameters() : array;
+        public function GetQuery() : string;
+    }

@@ -4,22 +4,20 @@
 
     class EventSelecting implements IQuery
     {
-        private string $id;
+        private int $id;
 
-        public function __construct(string $id)
+        public function __construct(int $id)
         {
             $this->id = $id;
         }
 
         public function GetParameters(): array
         {
-            return [
-                'id' => $this->id
-            ];
+            return array('id' => $this->id);
         }
 
         public function GetQuery(): string
         {
-            return "SELECT id, title, date FROM events WHERE id=:id";
+            return "SELECT id, title, date FROM events WHERE id = :id";
         }
     }

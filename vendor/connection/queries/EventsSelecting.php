@@ -1,16 +1,30 @@
 <?php
 
-require_once 'IQuery.php';
+    require_once 'IQuery.php';
 
-class EventsSelecting implements IQuery
-{
-    public function GetParameters(): array
+    class EventsSelecting implements IQuery
     {
-        return array();
-    }
+        private ?int $user_id;
 
-    public function GetQuery(): string
-    {
-        return "SELECT id, title, date FROM events ORDER BY date";
+        public function __construct(int $user_id = null)
+        {
+            $this->user_id = $user_id;
+        }
+
+        public function GetParameters(): array
+        {
+            return $this->user_id != null
+                ? array('user_id' => $this->user_id)
+                : array();
+        }
+
+        public function GetQuery(): string
+        {
+            return "SELECT id, title, date 
+                    FROM events"
+                    . ($this->user_id != null
+                        ? " WHERE user_id = :user_id "
+                        : " ") .
+                    "ORDER BY date";
+        }
     }
-}
