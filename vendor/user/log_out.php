@@ -4,4 +4,4 @@
 
     unset($_SESSION['user']);
 
-    header("Location: ../../authorization.php");
+    header('Location: ../../authorization.php');

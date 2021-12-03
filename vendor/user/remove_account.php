@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     require_once '../connection/Connection.php';
@@ -10,4 +11,4 @@
 
     unset($_SESSION['user']);
 
-    header("Location: ../../authorization.php");
+    header('Location: ../../authorization.php');

@@ -15,12 +15,13 @@
     try
     {
         $connection->Execute(new EventAdding($user_id, $title, $day, $month, $year));
+
+        header('Location: ../../personal_events.php');
     }
-    catch (Exception $e)
+    catch (PDOException $e)
     {
-        $_SESSION['error_message'] = "This event is already scheduled";
-        header("Location: ../new_event.php");
-        die();
+        $_SESSION['error_message'] = 'This event is already scheduled';
+
+        header('Location: ../../new_event.php');
     }
 
-    header("Location: ../../personal_events.php");

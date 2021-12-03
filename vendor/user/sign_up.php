@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     require_once '../connection/Connection.php';
@@ -13,7 +14,7 @@
     {
         $_SESSION['error_message'] = 'Password was not confirmed';
 
-        header("Location: ../../registration.php");
+        header('Location: ../../registration.php');
         die();
     }
 
@@ -23,12 +24,12 @@
     {
         $connection->Execute(new UserInserting($login, $email, $password));
 
-        header("Location: ../../authorization.php");
+        header('Location: ../../authorization.php');
     }
     catch (PDOException $e)
     {
         $_SESSION['error_message'] = 'This user is already registered';
 
-        header("Location: ../../registration.php");
+        header('Location: ../../registration.php');
     }
 
