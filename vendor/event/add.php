@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require_once 'Connection.php';
-    require_once 'queries/EventAdding.php';
+    require_once '../connection/Connection.php';
+    require_once '../connection/queries/EventAdding.php';
 
     $user_id = $_SESSION['user']['id'];
     $title = $_POST['title'];
@@ -23,4 +23,4 @@
         die();
     }
 
-    header("Location: ../personal.php");
+    header("Location: ../../personal_events.php");

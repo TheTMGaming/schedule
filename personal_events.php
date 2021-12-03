@@ -1,12 +1,12 @@
 <?php
     session_start();
 
-    require_once 'connection/Connection.php';
-    require_once 'connection/queries/UserEventsSelecting.php';
+    require_once 'vendor/connection/Connection.php';
+    require_once 'vendor/connection/queries/UserEventsSelecting.php';
 
     if (!isset($_SESSION['user']))
     {
-        header("Location: login.php");
+        header("Location: authorization.php");
         die();
     }
 
@@ -18,8 +18,8 @@
 <html lang="en">
 
 <?php
-require_once "src/head.php";
-require_once "src/header.php";
+require_once "sources/head.php";
+require_once "sources/header.php";
 ?>
 
 <body>
@@ -54,7 +54,7 @@ require_once "src/header.php";
                         <input type="hidden" value="<?=$event['id']?>" name="id">
                         <button class="button button-view">Edit</button>
                     </form>
-                    <form action="connection/remove.php" method="post">
+                    <form action="vendor/event/remove.php" method="post">
                         <input type="hidden" value="<?= $event['id']?>" name="id">
                         <button onclick="return confirm('Are you sure?')" class="button button-view">Remove</button>
                     </form>

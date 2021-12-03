@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require_once 'Connection.php';
-    require_once 'queries/UserDeleting.php';
+    require_once '../connection/Connection.php';
+    require_once '../connection/queries/UserDeleting.php';
 
     $connection = new Connection();
 
@@ -10,4 +10,4 @@
 
     unset($_SESSION['user']);
 
-    header("Location: ../login.php");
+    header("Location: ../../authorization.php");

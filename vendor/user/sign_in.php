@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require_once 'Connection.php';
-    require_once 'queries/UserSelecting.php';
+    require_once '../connection/Connection.php';
+    require_once '../connection/queries/UserSelecting.php';
 
     $identifier = $_POST['identifier'];
     $password = $_POST['password'];
@@ -13,9 +13,9 @@
     if (count($info) == 0)
     {
         $_SESSION['error_message'] = "Invalid login/email or password";
-        header("Location: ../login.php");
+        header("Location: ../authorization.php");
         die();
     }
 
     $_SESSION['user'] = $info[0];
-    header("Location: ../personal.php");
+    header("Location: ../../personal_events.php");

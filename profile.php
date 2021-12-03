@@ -12,9 +12,9 @@
 
 <!doctype html>
 <html lang="en">
-<?php require_once "src/head.php"; ?>
+<?php require_once "sources/head.php"; ?>
 <body>
-    <?php require_once "src/header.php"; ?>
+    <?php require_once "sources/header.php"; ?>
     <div class="wrapper">
         <span class="title">Profile</span>
         <div class="profile">
@@ -28,7 +28,7 @@
                     <span class="profile-data"><?=$user['email']?></span>
                 </div>
             </div>
-            <form action="connection/remove_account.php" method="post">
+            <form action="vendor/user/remove_account.php" method="post">
                 <button onclick="return confirm('Are you sure?')" class="button button-view">Remove profile</button>
             </form>
         </div>

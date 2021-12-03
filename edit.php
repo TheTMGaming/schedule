@@ -1,12 +1,12 @@
 <?php
     session_start();
 
-    require_once 'connection/Connection.php';
-    require_once 'connection/queries/EventSelecting.php';
+    require_once 'vendor/connection/Connection.php';
+    require_once 'vendor/connection/queries/EventSelecting.php';
 
     if (!isset($_SESSION['user']))
     {
-        header("Location: login.php");
+        header("Location: authorization.php");
         die();
     }
 
@@ -18,13 +18,13 @@
 
 <!doctype html>
 <html lang="en">
-<?php require_once "src/head.php"; ?>
+<?php require_once "sources/head.php"; ?>
 <body>
-<?php require_once "src/header.php"; ?>
+<?php require_once "sources/header.php"; ?>
 <div class="wrapper">
     <span class="title">Edit Event</span>
-    <form class="form" action="connection/update_event.php" method="post">
-        <?php require_once "src/error.php"; ?>
+    <form class="form" action="vendor/event/update.php" method="post">
+        <?php require_once "sources/error.php"; ?>
         <input type="hidden" value="<?=$event['id']?>" name="id">
         <label>Title</label>
         <input type="text" name="title" value="<?=$event['title']?>">
@@ -50,7 +50,7 @@
         <button class="button button-submit" type="submit" onclick="return confirm('Are you sure?')">Save</button>
     </form>
 </div>
-    <script src="src/script.js"></script>
+    <script src="sources/date.js"></script>
     <script>setDate(<?=$date['mday']?>, <?=$date['mon']?>, <?=$date['year']?>)</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-    require_once 'connection/Connection.php';
-    require_once 'connection/queries/EventsSelecting.php';
+    require_once 'vendor/connection/Connection.php';
+    require_once 'vendor/connection/queries/EventsSelecting.php';
 
     $connection = new Connection();
     $events = $connection->Execute(new EventsSelecting());
@@ -10,8 +10,8 @@
 <html lang="en">
 
 <?php
-    require_once "src/head.php";
-    require_once "src/header.php";
+    require_once "sources/head.php";
+    require_once "sources/header.php";
 ?>
 
 <body>

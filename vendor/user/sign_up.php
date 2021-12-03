@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    require_once 'queries/UserByLoginSelecting.php';
-    require_once 'queries/UserByEmailSelecting.php';
-    require_once 'queries/UserInserting.php';
-    require_once 'Connection.php';
+    require_once '../connection/Connection.php';
+    require_once '../connection/queries/UserByLoginSelecting.php';
+    require_once '../connection/queries/UserByEmailSelecting.php';
+    require_once '../connection/queries/UserInserting.php';
 
     function IsExistUserByQuery(Connection $connection, IQuery $query) : bool
     {
@@ -16,7 +16,7 @@
     function ErrorHandle(string $message)
     {
         $_SESSION['error_message'] = $message;
-        header("Location: ../registration.php");
+        header("Location: ../../registration.php");
         die();
     }
 
@@ -38,4 +38,4 @@
 
     $connection->Execute(new UserInserting($login, $email, $password));
 
-    header("Location: ../login.php");
+    header("Location: ../../authorization.php");

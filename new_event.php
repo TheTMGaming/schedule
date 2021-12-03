@@ -3,20 +3,20 @@
 
     if (!isset($_SESSION['user']))
     {
-        header("Location: login.php");
+        header("Location: authorization.php");
         die();
     }
 ?>
 
 <!doctype html>
 <html lang="en">
-<?php require_once "src/head.php"; ?>
+<?php require_once "sources/head.php"; ?>
 <body>
-<?php require_once "src/header.php"; ?>
+<?php require_once "sources/header.php"; ?>
 <div class="wrapper">
     <span class="title">New Event</span>
-    <form class="form" action="connection/add.php" method="post">
-        <?php require_once "src/error.php"; ?>
+    <form class="form" action="vendor/event/add.php" method="post">
+        <?php require_once "sources/error.php"; ?>
         <label>Title</label>
         <input type="text" name="title">
         <label>Day</label>
@@ -41,7 +41,7 @@
         <button class="button button-submit" type="submit">Create</button>
     </form>
 </div>
-    <script src="src/script.js"></script>
+    <script src="sources/date.js"></script>
     <script>setDateNow()</script>
 </body>
 </html>

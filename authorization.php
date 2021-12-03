@@ -3,20 +3,20 @@
 
     if (isset($_SESSION['user']))
     {
-        header("Location: personal.php");
+        header("Location: personal_events.php");
         die();
     }
 ?>
 
 <!doctype html>
 <html lang="en">
-<?php require_once "src/head.php"; ?>
+<?php require_once "sources/head.php"; ?>
 <body>
-<?php require_once "src/header.php"; ?>
+<?php require_once "sources/header.php"; ?>
 <div class="wrapper">
     <span class="title">Authorization</span>
-    <form class="form" action="connection/SignIn.php" method="post">
-        <?php require_once "src/error.php"; ?>
+    <form class="form" action="vendor/user/sign_in.php" method="post">
+        <?php require_once "sources/error.php"; ?>
         <label>Login/email</label>
         <input type="text" name="identifier" placeholder="Input login or email" required>
         <label>Password</label>
