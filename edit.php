@@ -27,7 +27,7 @@
         <?php require_once "sources/error.php"; ?>
         <input type="hidden" value="<?=$event['id']?>" name="id">
         <label>Title</label>
-        <input type="text" name="title" value="<?=$event['title']?>">
+        <input type="text" name="title" value="<?=$event['title']?>" placeholder="Input title" required>
         <label>Day</label>
         <select class="days" name="day"></select>
         <label>Month</label>

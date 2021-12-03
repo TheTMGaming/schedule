@@ -18,7 +18,7 @@
     <form class="form" action="vendor/event/add.php" method="post">
         <?php require_once "sources/error.php"; ?>
         <label>Title</label>
-        <input type="text" name="title">
+        <input type="text" name="title" placeholder="Input title" required>
         <label>Day</label>
         <select class="days" name="day"></select>
         <label>Month</label>
