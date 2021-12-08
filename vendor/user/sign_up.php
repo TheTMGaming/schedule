@@ -25,6 +25,7 @@
         $connection->Execute(new UserInserting(
             $login, $email, password_hash($password, PASSWORD_BCRYPT)));
 
+        $_SESSION['success_message'] = 'You have successfully registered';
         header('Location: ../../authorization.php');
     }
     catch (PDOException $e)

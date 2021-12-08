@@ -16,7 +16,7 @@
     <div class="wrapper">
         <span class="title">Registration</span>
         <form class="form" action="vendor/user/sign_up.php" method="post">
-            <?php require_once "sources/error.php"; ?>
+            <?php require_once "sources/info_messages.php"; ?>
             <label>Login</label>
             <input type="text" name="login" placeholder="Input login" required>
             <label>Email</label>

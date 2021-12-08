@@ -24,7 +24,7 @@
 <div class="wrapper">
     <span class="title">Edit Event</span>
     <form class="form" action="vendor/event/update.php" method="post">
-        <?php require_once "sources/error.php"; ?>
+        <?php require_once "sources/info_messages.php"; ?>
         <input type="hidden" value="<?=$event['id']?>" name="id">
         <label>Title</label>
         <input type="text" name="title" value="<?=$event['title']?>" placeholder="Input title" required>

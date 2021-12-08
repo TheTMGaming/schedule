@@ -275,29 +275,44 @@ html
     text-decoration: none;
 }
 
-/* Error */
-.error
+/* Info */
+.info
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #FF4242;
     border-radius: 4px;
     width: 500px;
     height: 35px;
     padding: 10px;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
-.error img
+.info img
 {
     margin-right: 10px;
+}
+
+.error
+{
+    border: 2px solid #FF4242;
 }
 
 .error span
 {
     color: #FF4242;
 }
+
+.success
+{
+    border: 2px solid #17be3d;
+}
+
+.success span
+{
+    color: #17be3d;
+}
+
 
 /* Profile */
 .profile

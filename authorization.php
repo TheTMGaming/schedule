@@ -16,7 +16,7 @@
     <div class="wrapper">
         <span class="title">Authorization</span>
         <form class="form" action="vendor/user/sign_in.php" method="post">
-            <?php require_once "sources/error.php"; ?>
+            <?php require_once "sources/info_messages.php"; ?>
             <label>Login/email</label>
             <input type="text" name="identifier" placeholder="Input login or email" required>
             <label>Password</label>

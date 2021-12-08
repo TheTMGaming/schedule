@@ -16,7 +16,7 @@
 <div class="wrapper">
     <span class="title">New Event</span>
     <form class="form" action="vendor/event/add.php" method="post">
-        <?php require_once "sources/error.php"; ?>
+        <?php require_once "sources/info_messages.php"; ?>
         <label>Title</label>
         <input type="text" name="title" placeholder="Input title" required>
         <label>Day</label>
