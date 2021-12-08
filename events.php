@@ -33,7 +33,9 @@
                     <div class="info-event">
                         <span class="title-text"><?=$event['title']?></span>
                     </div>
-                    <button class="button button-view">View more</button>
+                    <div class="buttons">
+                        <button class="button button-view">View more</button>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
