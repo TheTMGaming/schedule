@@ -10,8 +10,9 @@
 
     $connection = new Connection();
 
-    $info = $connection->Execute(new UserSelecting($identifier, $password));
-    if (count($info) == 0)
+    $user = $connection->Execute(new UserSelecting($identifier))[0];
+
+    if (!$user || !password_verify($password, $user['password']))
     {
         $_SESSION['error_message'] = 'Invalid login/email or password';
 
@@ -19,5 +20,5 @@
         die();
     }
 
-    $_SESSION['user'] = $info[0];
+    $_SESSION['user'] = $user;
     header('Location: ../../personal_events.php');

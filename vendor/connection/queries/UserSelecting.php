@@ -6,26 +6,21 @@
     class UserSelecting implements IQuery
     {
         private string $identifier;
-        private string $password;
 
-        public function __construct(string $identifier, string $password)
+        public function __construct(string $identifier)
         {
             $this->identifier = $identifier;
-            $this->password = md5($password);
         }
 
         public function GetParameters(): array
         {
-            return [
-                'identifier' => $this->identifier,
-                'password' => $this->password
-            ];
+            return array('identifier' => $this->identifier);
         }
 
         public function GetQuery(): string
         {
-            return "SELECT id, login, email 
+            return "SELECT id, login, email, password 
                     FROM users 
-                    WHERE (login = :identifier OR email = :identifier) AND password = :password";
+                    WHERE login = :identifier OR email = :identifier";
         }
     }

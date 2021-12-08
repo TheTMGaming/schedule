@@ -12,7 +12,7 @@
         {
             $this->login = $login;
             $this->email = $email;
-            $this->password = md5($password);
+            $this->password = $password;
         }
 
         public function GetParameters(): array

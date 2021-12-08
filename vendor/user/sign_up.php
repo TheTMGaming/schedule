@@ -22,7 +22,8 @@
 
     try
     {
-        $connection->Execute(new UserInserting($login, $email, $password));
+        $connection->Execute(new UserInserting(
+            $login, $email, password_hash($password, PASSWORD_BCRYPT)));
 
         header('Location: ../../authorization.php');
     }
