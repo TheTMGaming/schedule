@@ -30,7 +30,7 @@
                             <span class="date-text"><?=$date['year']?></span>
                         </div>
                     </div>
-                    <div class="info">
+                    <div class="info-event">
                         <span class="title-text"><?=$event['title']?></span>
                     </div>
                     <button class="button button-view">View more</button>

@@ -46,7 +46,7 @@ require_once "sources/header.php";
                         <span class="date-text"><?=$date['year']?></span>
                     </div>
                 </div>
-                <div class="info">
+                <div class="info-event">
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
                 <div class="buttons">
