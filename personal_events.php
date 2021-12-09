@@ -49,6 +49,7 @@ require_once "sources/header.php";
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
                 <div class="buttons">
+                    <button type="button" class="button button-view">View more</button>
                     <form action="edit.php" method="get">
                         <input type="hidden" value="<?=$event['id']?>" name="id">
                         <button class="button button-view">Edit</button>
@@ -58,9 +59,36 @@ require_once "sources/header.php";
                         <button onclick="return confirm('Are you sure?')" class="button button-view">Remove</button>
                     </form>
                 </div>
+
+                <div class="popup">
+                    <div class="popup-body">
+                        <div class="popup-content">
+                            <button type="button" class="popup-close">
+                                <img src="images/cross.png" alt="Exit">
+                            </button>
+                            <div class="popup-title">
+                                <div class="label">Title:</div>
+                                <div class="popup-text"><?=$event['title']?></div>
+                            </div>
+                            <div class="popup-date">
+                                <div class="label">Date:</div>
+                                <div class="popup-text"><?=date('d F Y', strtotime($event['date']))?></div>
+                            </div>
+                            <div class="popup-author">
+                                <div class="label">Author:</div>
+                                <div class="popup-text"><?=$event['author']?></div>
+                            </div>
+                            <div class="popup-description">
+                                <div class="label">Description:</div>
+                                <pre class="popup-text"><?=$event['description']?></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
+<script src="sources/popup.js"></script>
 </body>
 </html>

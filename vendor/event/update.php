@@ -7,6 +7,7 @@
 
     $id = $_POST['id'];
     $title = $_POST['title'];
+    $description = $_POST['description'];
     $day = $_POST['day'];
     $month = $_POST['month'];
     $year = $_POST['year'];
@@ -14,7 +15,7 @@
     try
     {
         $connection = new Connection();
-        $connection->Execute(new EventUpdating($id, $title, $day, $month, $year));
+        $connection->Execute(new EventUpdating($id, $title, $description, $day, $month, $year));
 
         header('Location: ../../personal_events.php');
     }

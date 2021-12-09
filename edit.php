@@ -31,7 +31,8 @@
         <input type="text" name="title" value="<?=$event['title']?>" maxlength="<?=Config::$MAX_TITLE_LENGTH?>"
                placeholder="Input title (max <?=Config::$MAX_TITLE_LENGTH?> symbols)" required>
         <label>Description</label>
-        <textarea class="description-event" name="description" placeholder="Input description"><?=$event['description']?></textarea>
+        <textarea class="description-event" name="description" placeholder="Input description (max <?=Config::$MAX_DESCRIPTION_LENGTH?> symbols"
+                  maxlength="<?=Config::$MAX_DESCRIPTION_LENGTH?>"><?=$event['description']?></textarea>
         <label>Day*</label>
         <select class="days" name="day"></select>
         <label>Month*</label>
