@@ -22,7 +22,9 @@
         <input type="text" name="title" placeholder="Input title (max <?=Config::$MAX_TITLE_LENGTH?> symbols)"
                maxlength="<?=Config::$MAX_TITLE_LENGTH?>" required>
         <label>Description</label>
-        <textarea class="description-event" name="description" placeholder="Input description"></textarea>
+        <textarea class="description-event" name="description"
+                  placeholder="Input description (max <?=Config::$MAX_DESCRIPTION_LENGTH?> symbols)"
+                  maxlength="<?=Config::$MAX_DESCRIPTION_LENGTH?>"></textarea>
         <label>Day*</label>
         <select class="days" name="day"></select>
         <label>Month*</label>
