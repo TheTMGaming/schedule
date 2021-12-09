@@ -37,7 +37,6 @@ html
     border-radius: 4px;
     padding: 20px 16px;
     margin-bottom: 30px;
-    width: 100%;
 }
 
 .event:hover
@@ -49,7 +48,9 @@ html
 .info-event
 {
     width: 100%;
+    max-width: 785px;
     margin-right: 20px;
+    overflow: hidden;
 }
 
 .date
@@ -96,6 +97,7 @@ html
     font-size: 20px;
     margin: 4px 0;
     color: #1E212C;
+    word-break: break-all;
 }
 
 .description-text
