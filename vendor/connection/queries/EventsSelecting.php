@@ -20,8 +20,8 @@
 
         public function GetQuery(): string
         {
-            return "SELECT id, title, date 
-                    FROM events"
+            return "SELECT events.id, title, description, date, users.login as author
+                    FROM events INNER JOIN users ON events.user_id = users.id"
                     . ($this->user_id != null
                         ? " WHERE user_id = :user_id "
                         : " ") .
