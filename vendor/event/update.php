@@ -11,10 +11,9 @@
     $month = $_POST['month'];
     $year = $_POST['year'];
 
-    $connection = new Connection();
-
     try
     {
+        $connection = new Connection();
         $connection->Execute(new EventUpdating($id, $title, $day, $month, $year));
 
         header('Location: ../../personal_events.php');

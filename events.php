@@ -15,8 +15,8 @@
 ?>
 
 <body>
-    <span class="title">Events</span>
     <div class="wrapper">
+        <span class="title">Events</span>
         <div class="events-list">
             <?php foreach ($events as $event):?>
                 <?php $date = getdate(strtotime($event['date'])); ?>

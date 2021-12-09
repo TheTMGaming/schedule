@@ -3,6 +3,7 @@
 
     require_once 'vendor/connection/Connection.php';
     require_once 'vendor/connection/queries/EventSelecting.php';
+    require_once 'vendor/config.php';
 
     if (!isset($_SESSION['user']))
     {
@@ -12,7 +13,7 @@
 
     $connection = new Connection();
 
-    $event = $connection->Execute(new EventSelecting($_POST['id']))[0];
+    $event = $connection->Execute(new EventSelecting($_GET['id']))[0];
     $date = getdate(strtotime($event['date']));
 ?>
 
@@ -26,11 +27,14 @@
     <form class="form" action="vendor/event/update.php" method="post">
         <?php require_once "sources/info_messages.php"; ?>
         <input type="hidden" value="<?=$event['id']?>" name="id">
-        <label>Title</label>
-        <input type="text" name="title" value="<?=$event['title']?>" placeholder="Input title" required>
-        <label>Day</label>
+        <label>Title*</label>
+        <input type="text" name="title" value="<?=$event['title']?>" maxlength="<?=Config::$MAX_TITLE_LENGTH?>"
+               placeholder="Input title (max <?=Config::$MAX_TITLE_LENGTH?> symbols)" required>
+        <label>Description</label>
+        <textarea class="description-event" name="description" placeholder="Input description"><?=$event['description']?></textarea>
+        <label>Day*</label>
         <select class="days" name="day"></select>
-        <label>Month</label>
+        <label>Month*</label>
         <select class="months" name="month">
             <option selected>January</option>
             <option>February</option>
@@ -45,7 +49,7 @@
             <option>November</option>
             <option>December</option>
         </select>
-        <label>Year</label>
+        <label>Year*</label>
         <select class="years" name="year"></select>
         <button class="button button-submit" type="submit" onclick="return confirm('Are you sure?')">Save</button>
     </form>

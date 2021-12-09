@@ -6,15 +6,15 @@
 
     $user_id = $_SESSION['user']['id'];
     $title = $_POST['title'];
+    $description = $_POST['description'];
     $day = $_POST['day'];
     $month = $_POST['month'];
     $year = $_POST['year'];
 
-    $connection = new Connection();
-
     try
     {
-        $connection->Execute(new EventAdding($user_id, $title, $day, $month, $year));
+        $connection = new Connection();
+        $connection->Execute(new EventAdding($user_id, $title, $description, $day, $month, $year));
 
         header('Location: ../../personal_events.php');
     }

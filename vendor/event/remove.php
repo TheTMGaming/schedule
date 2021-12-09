@@ -5,6 +5,6 @@
 
     $connection = new Connection();
 
-    $connection->Execute(new EventDeleting($_POST['id']));
+    $connection->Execute(new EventDeleting($_GET['id']));
 
     header('Location: ../../personal_events.php');

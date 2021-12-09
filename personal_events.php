@@ -23,9 +23,8 @@ require_once "sources/header.php";
 ?>
 
 <body>
-<span class="title">Your Events</span>
 <div class="wrapper">
-
+    <span class="title">Your Events</span>
     <div class="events-list">
         <div class="button-add-wrapper">
             <a href="new_event.php">
@@ -50,11 +49,11 @@ require_once "sources/header.php";
                     <span class="title-text"><?=$event['title']?></span>
                 </div>
                 <div class="buttons">
-                    <form action="edit.php" method="post">
+                    <form action="edit.php" method="get">
                         <input type="hidden" value="<?=$event['id']?>" name="id">
                         <button class="button button-view">Edit</button>
                     </form>
-                    <form action="vendor/event/remove.php" method="post">
+                    <form action="vendor/event/remove.php" method="get">
                         <input type="hidden" value="<?= $event['id']?>" name="id">
                         <button onclick="return confirm('Are you sure?')" class="button button-view">Remove</button>
                     </form>
