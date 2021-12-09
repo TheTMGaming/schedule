@@ -4,34 +4,37 @@
 
     require_once '../connection/Connection.php';
     require_once '../connection/queries/UserInserting.php';
+    require_once '../connection/queries/LoginSelecting.php';
+    require_once '../connection/queries/EmailSelecting.php';
+
+    function TryCatchError($predicate, $message)
+    {
+        if (!$predicate)
+            return;
+
+        $_SESSION['error_message'] = $message;
+
+        header('Location: ../../registration.php');
+        die();
+    }
 
     $login = $_POST['login'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
-    if ($password !== $password_confirm)
-    {
-        $_SESSION['error_message'] = 'Password was not confirmed';
-
-        header('Location: ../../registration.php');
-        die();
-    }
+    TryCatchError($password !== $password_confirm, 'Password was not confirmed');
 
     $connection = new Connection();
 
-    try
-    {
-        $connection->Execute(new UserInserting(
-            $login, $email, password_hash($password, PASSWORD_BCRYPT)));
+    TryCatchError(count($connection->Execute(new LoginSelecting($login))) > 0,
+        'Login already exists');
+    TryCatchError(count($connection->Execute(new EmailSelecting($email))) > 0,
+        'Email already exists');
 
-        $_SESSION['success_message'] = 'You have successfully registered';
-        header('Location: ../../authorization.php');
-    }
-    catch (PDOException $e)
-    {
-        $_SESSION['error_message'] = 'This user is already registered';
+    $connection->Execute(new UserInserting(
+        $login, $email, password_hash($password, PASSWORD_BCRYPT)));
 
-        header('Location: ../../registration.php');
-    }
+    $_SESSION['success_message'] = 'You have successfully registered';
+    header('Location: ../../authorization.php');
 

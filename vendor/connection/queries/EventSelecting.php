@@ -18,6 +18,6 @@
 
         public function GetQuery(): string
         {
-            return "SELECT id, title, description, date FROM events WHERE id = :id";
+            return "SELECT id, title, description, date FROM events WHERE id = :id LIMIT 1";
         }
     }

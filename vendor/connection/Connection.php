@@ -20,11 +20,11 @@
             $this->connection = new PDO($dsn, $this->user, $this->password, $this->options);
         }
 
-        public function Execute(IQuery $query) : array
+        public function Execute(IQuery $query, int $fetch_mode = null) : array
         {
             $statement = $this->connection->prepare($query->GetQuery());
             $statement->execute($query->GetParameters());
 
-            return $statement->fetchAll($this->fetch_mode);
+            return $statement->fetchAll($fetch_mode ?? $this->fetch_mode);
         }
     }

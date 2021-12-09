@@ -21,6 +21,6 @@
         {
             return "SELECT id, login, email, password 
                     FROM users 
-                    WHERE login = :identifier OR email = :identifier";
+                    WHERE login = :identifier OR email = :identifier LIMIT 1";
         }
     }
