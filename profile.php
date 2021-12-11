@@ -32,10 +32,8 @@
                 </div>
                 <div class="buttons">
                     <a href="identifiers.php"><button type="button" class="button button-view">Update login/email</button></a>
-                    <a href="password.php"><button type="button" class="button button-view">Update password</button></a>
-                    <form action="vendor/user/remove_account.php" method="post">
-                        <button onclick="return confirm('Are you sure? All your events will be deleted!')" class="button button-view">Remove profile</button>
-                    </form>
+                    <a href="new_password.php"><button type="button" class="button button-view">Update password</button></a>
+                    <a href="remove_account.php"><button type="button" class="button button-view">Remove profile</button></a>
                 </div>
             </div>
         </main>

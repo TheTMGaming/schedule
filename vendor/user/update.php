@@ -54,7 +54,7 @@
     {
         $hash = password_hash($new_password, PASSWORD_BCRYPT);
 
-        $location = '../../password.php';
+        $location = '../../new_password.php';
 
         TryCatchError(!password_verify($old_password, $user['password']),
             'Old password was not confirmed', $location);
