@@ -8,7 +8,7 @@
     if (!password_verify($_POST['password_confirm'], $_SESSION['user']['password']))
     {
         $_SESSION['error_message'] = 'Password was not confirmed';
-        header('Location: ../../remove.php');
+        header('Location: ../../remove_account.php');
         die();
     }
 
